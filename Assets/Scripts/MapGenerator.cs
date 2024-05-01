@@ -23,6 +23,11 @@ public class MapGenerator : MonoBehaviour
     public AnimationCurve meshHeightCurve;
     public TerrainType[] regions;
 
+    void Start()
+    {
+        GenerateMap();
+    }
+
     public void GenerateMap()
     {
         float[,] noiseMap = Noise.GenerateNoiseMap(mapChunkSize,mapChunkSize,seed,noiseScale,octaves,persistance,lacunarity,offset);
